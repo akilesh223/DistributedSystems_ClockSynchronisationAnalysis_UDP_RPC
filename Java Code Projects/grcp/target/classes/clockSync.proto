@@ -1,0 +1,21 @@
+
+syntax = "proto3";
+
+
+option java_package = "io.grpc.clockSync";
+
+
+
+service TimeCompute {
+    rpc Time(reqTimeObj) returns (resTimeObj) ;
+}
+
+message reqTimeObj {
+  string client_sent_time = 1;
+}
+
+message resTimeObj {
+  string client_sent_time = 1;
+  string server_recd_time = 2;
+  string server_sent_time = 3;
+}
